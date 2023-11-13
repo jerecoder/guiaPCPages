@@ -1,0 +1,420 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Guía de Programacion Competitiva</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">1.</strong> Prefacio</a></li><li class="chapter-item expanded "><a href="introduction_1.html"><strong aria-hidden="true">2.</strong> Introduccion</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2.1.html"><strong aria-hidden="true">2.1.</strong> Lenguajes de programación</a></li><li class="chapter-item expanded "><a href="2.2.html"><strong aria-hidden="true">2.2.</strong> Entrada y salida</a></li><li class="chapter-item expanded "><a href="2.3.html"><strong aria-hidden="true">2.3.</strong> Números y cómo representarlos</a></li><li class="chapter-item expanded "><a href="2.4.html"><strong aria-hidden="true">2.4.</strong> Template de C++</a></li><li class="chapter-item expanded "><a href="2.5.html"><strong aria-hidden="true">2.5.</strong> Cómo Practicar</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Guía de Programacion Competitiva</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="prefacio"><a class="header" href="#prefacio">Prefacio</a></h1>
+<p>El propósito de este documento es dar una idea general de lo que es la programación competitiva e interesar a los estudiantes de grado de la Universidad de San Andrés en participar en este maravilloso deporte mental. Este documento de ninguna manera es completo, ya que hay una cantidad casi infinita de temas que podrían aparecer en una competencia. Sin embargo, nuestro objetivo es ofrecer una visión general de los temas más importantes, junto con soluciones a problemas clásicos y algunos otros difíciles. Casi todos los problemas se tomarán de <a href="https://cses.fi/">CSES</a>, y recomendamos encarecidamente que el lector implemente todas las soluciones que comprenda.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="1-introduccion"><a class="header" href="#1-introduccion">1 Introduccion</a></h1>
+<p>La programación competitiva es una disciplina que se ocupa de la creación e implementación de algoritmos bajo una limitación de tiempo. Por lo general, a los concursantes se les presenta un conjunto común de problemas, que pueden tener o no una diferencia de puntuación, y gana el concursante o equipo con mayor puntaje y menor penalidad (que suele ser una combinación entre tiempo en hacer los problemas y envíos incorrectos).</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lenguajes-de-programación"><a class="header" href="#lenguajes-de-programación">Lenguajes de programación</a></h1>
+<p>Los lenguajes de programación permitidos varían de una competencia a otra, permitiendo en algunos casos el uso de lenguajes no estándar como <em>Kotlin</em> o <em>Haskell</em>. Sin embargo, en su mayor parte, se permiten <em>C++</em> y <em>Java</em>. Esta guía estará escrita en <em>C++</em> y se espera que el lector esté familiarizado con <em>C</em>. De todas formas, exceptuando las líneas de código, los temas están dados de forma general.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="entrada-y-salida"><a class="header" href="#entrada-y-salida">Entrada y salida</a></h1>
+<p>Hemos dicho que la programación competitiva se ocupa de la <em>creación e implementación de algoritmos</em>, sin embargo, no hemos especificado cómo sucede esto en la competencia. Normalmente, esto se hace mediante salida estándar y entrada estándar. En C++, esto es <strong>cin</strong> para entrada y <strong>cout</strong> para salida.</p>
+<p>Como ejemplo veremos la solución para <a href="https://codeforces.com/problemset/problem/1772/A">este</a> problema:</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+
+
+using namespace std;
+
+
+int main()
+{
+    int t;
+    cin &gt;&gt; t;
+    while (t--)
+    {
+        string op;
+        cin &gt;&gt; op;
+        cout &lt;&lt; (op[0] - '0') + (op[2] - '0') &lt;&lt; &quot;\n&quot;;
+    }
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="números-y-cómo-representarlos"><a class="header" href="#números-y-cómo-representarlos">Números y cómo representarlos</a></h1>
+<p>Tipos de números frecuentes en programación competitiva:</p>
+<ul>
+<li>
+<p><strong>int</strong> - representa números enteros y existe entre [\(-2^{31}\), \(2^{31} - 1\)], suele ser usado en la mayoria de los contextos.</p>
+</li>
+<li>
+<p><strong>long double</strong> - se usa en entornos donde queremos representar un número que no es entero. Esto común en problemas de geometría o de simulación de un proceso físico, por ejemplo. Este número no es exacto y puede tener errores de precisión. Por lo general, en problemas donde se necesita una representación no entera, los enunciados piden que genere la respuesta con una precisión de 1e-6. Una forma común de lidiar con esto es:</p>
+<pre><code class="language-cpp">long double number = 0.12312;
+int digits = 6; // for 1e-6
+cout &lt;&lt; fixed &lt;&lt; setprecision(digits) &lt;&lt; number;
+</code></pre>
+</li>
+<li>
+<p><strong>long long int</strong> - este es un número entero pero con el doble de bits. Se usa cuando un <strong>int</strong> no es suficiente. En mi opinión, este es el tipo de datos más útil y normalmente lo uso de forma predeterminada, en lugar de <strong>int</strong>.</p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="template-de-c"><a class="header" href="#template-de-c">Template de C++</a></h1>
+<p>Un aspecto clave de la programación competitiva es el tiempo: si tenés una solución correcta para un problema, pero te lleva horas implementarla, entonces estás perdiendo tiempo que podrías utilizar para pensar en otros problemas. Comparto mi template, comentada con explicaciones.</p>
+<h2 id="macros"><a class="header" href="#macros">Macros</a></h2>
+<pre><code class="language-cpp">#define forn(i, n) for (tint i = 0; i &lt; tint(n); i++)
+#define forsn(i, s, n) for (tint i = s; i &lt; tint(n); i++)
+#define dforn(i, n) for (tint i = tint(n) - 1; i &gt;= 0; i--)
+#define dforsn(i, s, n) for (tint i = tint(n) - 1; i &gt;= s; i--)
+#define sz(x) tint(x.size())
+#define all(x) x.begin(), x.end()
+#define DBG(x) cerr &lt;&lt; #x &lt;&lt; &quot; = &quot; &lt;&lt; x &lt;&lt; endl
+</code></pre>
+<ul>
+<li><strong>forn(i, n)</strong> - es un for que recorre los numeros desde el 0 hasta el n-1, la i es un placeholder para la variable de iteración.</li>
+<li><strong>forsn(i, s, n)</strong> - es lo mismo solo que, en vez de arrancar en 0, arranca en s.</li>
+<li><strong>dforn(i, n)</strong> - mismo rango que forn solo que recorre el for en el orden opuesto.</li>
+<li><strong>dforsn(i, s, n)</strong> - mismo rango que forsn pero recorre en orden opuesto.</li>
+<li><strong>sz(x)</strong> - consigue el tamaño de la variable y castea a tint (se explica más adelante).</li>
+<li><strong>all(x)</strong> - representa los iteradores de inicio y final de una variable, lo que permite ordenar un vector de la siguiente forma sort(all(vector)).</li>
+<li><strong>DBG(x)</strong> - printea en la consola de error el nombre de la variable y al lado su valor. Es especialmente util para debuggear.</li>
+</ul>
+<h2 id="otras-abreviaciones"><a class="header" href="#otras-abreviaciones">Otras abreviaciones</a></h2>
+<pre><code class="language-cpp">using namespace std;
+using tint = long long;
+using vi = vector&lt;tint&gt;;
+using pii = pair&lt;tint, tint&gt;;
+</code></pre>
+<ul>
+<li><strong>using namespace std</strong> - se usa para no tener que andar escribiendo std:cout, std:cin, etc. Es una mala practica, pero como estamos en programacion competitiva eso no nos importa.</li>
+<li><strong>tint</strong> - define el type of int, o tipo de numero que vamos a utilizar en el problema. Esto es para evitar cometer errores de tipo y acostumbrarse a escribir tint, en vez de tener que pensar cada vez que escribimos una variable.</li>
+<li><strong>vi</strong> - vector de tints.</li>
+<li><strong>pii</strong> - par de tints.</li>
+</ul>
+<h2 id="optimizacion-de-inputoutput"><a class="header" href="#optimizacion-de-inputoutput">Optimizacion de Input/Output</a></h2>
+<pre><code class="language-cpp">inline void fastIO()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+}
+</code></pre>
+<p>Esta función suele ser llamada en la primera línea del main en C++, se encarga de optimizar <strong>std::cin</strong> y <strong>std::cout</strong>, que por default son lentos.</p>
+<h2 id="funciones-para-debuggear"><a class="header" href="#funciones-para-debuggear">Funciones para debuggear</a></h2>
+<p>chmax y chmin 
+La idea de estas funciones es generalizar funciones nativas del lenguaje como +=, &amp;= o |=. chmax(variable, valor) actualiza a la variable de esta forma: variable = max(variable, valor). chmin hace lo mismo pero con el minimo.</p>
+<pre><code class="language-cpp">template &lt;typename T&gt;
+inline void chmax(T &amp;lhs, T rhs)
+{
+    lhs = max(lhs, rhs);
+}
+
+template &lt;typename T&gt;
+inline void chmin(T &amp;lhs, T rhs)
+{
+    lhs = min(lhs, rhs);
+}
+</code></pre>
+<h2 id="cout-para-vectores-y-pares"><a class="header" href="#cout-para-vectores-y-pares">cout para vectores y pares</a></h2>
+<pre><code class="language-cpp">// printea pairs, sirve para debuggear
+template &lt;typename T, typename U&gt;
+ostream &amp;operator&lt;&lt;(ostream &amp;os, const pair&lt;T, U&gt; &amp;p)
+{
+    os &lt;&lt; &quot;(&quot; &lt;&lt; p.first &lt;&lt; &quot;, &quot; &lt;&lt; p.second &lt;&lt; &quot;)&quot;;
+    return os;
+}
+
+// printea vectores, sirve para debuggear
+template &lt;typename T&gt;
+ostream &amp;operator&lt;&lt;(ostream &amp;os, const vector&lt;T&gt; &amp;v)
+{
+    os &lt;&lt; &quot;[&quot;;
+    forn(i, sz(v))
+    {
+        if (i &gt; 0)
+            os &lt;&lt; &quot;, &quot;;
+        os &lt;&lt; v[i];
+    }
+    os &lt;&lt; &quot;]&quot;;
+    return os;
+}
+</code></pre>
+<h2 id="template-completa"><a class="header" href="#template-completa">Template completa</a></h2>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+#define forn(i, n) for (tint i = 0; i &lt; tint(n); i++)
+#define forsn(i, s, n) for (tint i = s; i &lt; tint(n); i++)
+#define dforn(i, n) for (tint i = tint(n) - 1; i &gt;= 0; i--)
+#define dforsn(i, s, n) for (tint i = tint(n) - 1; i &gt;= s; i--)
+#define sz(x) tint(x.size())
+#define all(x) x.begin(), x.end()
+#define DBG(x) cerr &lt;&lt; #x &lt;&lt; &quot; = &quot; &lt;&lt; x &lt;&lt; endl
+
+using namespace std;
+
+using tint = long long;
+using vi = vector&lt;tint&gt;;
+using pii = pair&lt;tint, tint&gt;;
+
+inline void fastIO() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+}
+
+inline string YN(bool x, string y = &quot;YES&quot;, string n = &quot;NO&quot;) { return (x ? y : n); }
+
+template &lt;typename T&gt;
+inline void chmax(T &amp;lhs, T rhs) {
+  lhs = max(lhs, rhs);
+}
+
+template &lt;typename T&gt;
+inline void chmin(T &amp;lhs, T rhs) {
+  lhs = min(lhs, rhs);
+}
+
+template &lt;typename T, typename U&gt;
+ostream &amp;operator&lt;&lt;(ostream &amp;os, const pair&lt;T, U&gt; &amp;p) {
+  os &lt;&lt; &quot;(&quot; &lt;&lt; p.first &lt;&lt; &quot;, &quot; &lt;&lt; p.second &lt;&lt; &quot;)&quot;;
+  return os;
+}
+
+template &lt;typename T&gt;
+ostream &amp;operator&lt;&lt;(ostream &amp;os, const vector&lt;T&gt; &amp;v) {
+  os &lt;&lt; &quot;[&quot;;
+  forn(i, sz(v)) {
+    if (i &gt; 0) os &lt;&lt; &quot;, &quot;;
+    os &lt;&lt; v[i];
+  }
+  os &lt;&lt; &quot;]&quot;;
+  return os;
+}
+
+template &lt;typename T, size_t N&gt;
+ostream &amp;operator&lt;&lt;(ostream &amp;os, const array&lt;T, N&gt; &amp;v) {
+  os &lt;&lt; &quot;[&quot;;
+  forn(i, N) {
+    if (i &gt; 0) os &lt;&lt; &quot;, &quot;;
+    os &lt;&lt; v[i];
+  }
+  os &lt;&lt; &quot;]&quot;;
+  return os;
+}
+
+int main(){
+    fastIO();
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="como-practicar"><a class="header" href="#como-practicar">Como practicar</a></h1>
+<h2 id="caso-general"><a class="header" href="#caso-general">Caso general</a></h2>
+<p>Esto no es trivial, depende de la resiliencia, conocimiento y propósito del estudiante. Enlazo recursos sobre esto:</p>
+<ul>
+<li><a href="https://codeforces.com/blog/entry/91114">My opinion on how to practice competitive programming - Radewoosh</a></li>
+<li><a href="https://codeforces.com/blog/entry/98806">How to practice Competitive Programming - Um_nik</a></li>
+</ul>
+<h2 id="caso-equipos"><a class="header" href="#caso-equipos">Caso equipos</a></h2>
+<p>Si estás leyendo este documento, entonces es altamente probable que seas un estudiante de Ingeniería en la Universidad de San Andrés y tengas como objetivo participar en el Torneo Argentino de Programación u otra competencia del estilo. De ser este el caso, es importante tener en cuenta que el tiempo de preparación disponible es finito, hay muchos equipos que llevan años de práctica y . <strong>TODO</strong></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
