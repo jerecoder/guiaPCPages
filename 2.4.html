@@ -92,7 +92,9 @@
             <div class="sidebar-scrollbox">
                 <ol class="chapter"><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">1.</strong> Prefacio</a></li><li class="chapter-item expanded "><a href="introduction_1.html"><strong aria-hidden="true">2.</strong> Introduccion</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2.1.html"><strong aria-hidden="true">2.1.</strong> Lenguajes de programación</a></li><li class="chapter-item expanded "><a href="2.2.html"><strong aria-hidden="true">2.2.</strong> Entrada y salida</a></li><li class="chapter-item expanded "><a href="2.3.html"><strong aria-hidden="true">2.3.</strong> Números y cómo representarlos</a></li><li class="chapter-item expanded "><a href="2.4.html" class="active"><strong aria-hidden="true">2.4.</strong> Template de C++</a></li><li class="chapter-item expanded "><a href="2.5.html"><strong aria-hidden="true">2.5.</strong> Cómo Practicar</a></li></ol></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
 
         <!-- Track and set sidebar scroll position -->
@@ -182,7 +184,7 @@
 #define dforsn(i, s, n) for (tint i = tint(n) - 1; i &gt;= s; i--)
 #define sz(x) tint(x.size())
 #define all(x) x.begin(), x.end()
-#define DBG(x) cerr &lt;&lt; #x &lt;&lt; &quot; = &quot; &lt;&lt; x &lt;&lt; endl
+#define DBG(x) cerr &lt;&lt; #x &lt;&lt; " = " &lt;&lt; x &lt;&lt; endl
 </code></pre>
 <ul>
 <li><strong>forn(i, n)</strong> - es un for que recorre los numeros desde el 0 hasta el n-1, la i es un placeholder para la variable de iteración.</li>
@@ -213,9 +215,8 @@ using pii = pair&lt;tint, tint&gt;;
 }
 </code></pre>
 <p>Esta función suele ser llamada en la primera línea del main en C++, se encarga de optimizar <strong>std::cin</strong> y <strong>std::cout</strong>, que por default son lentos.</p>
-<h2 id="funciones-para-debuggear"><a class="header" href="#funciones-para-debuggear">Funciones para debuggear</a></h2>
-<p>chmax y chmin 
-La idea de estas funciones es generalizar funciones nativas del lenguaje como +=, &amp;= o |=. chmax(variable, valor) actualiza a la variable de esta forma: variable = max(variable, valor). chmin hace lo mismo pero con el minimo.</p>
+<h2 id="chmax-y-chmin"><a class="header" href="#chmax-y-chmin">chmax y chmin</a></h2>
+<p>La idea de estas funciones es generalizar funciones nativas del lenguaje como +=, &amp;= o |=. chmax(variable, valor) actualiza a la variable de esta forma: variable = max(variable, valor). chmin hace lo mismo pero con el minimo.</p>
 <pre><code class="language-cpp">template &lt;typename T&gt;
 inline void chmax(T &amp;lhs, T rhs)
 {
@@ -228,12 +229,12 @@ inline void chmin(T &amp;lhs, T rhs)
     lhs = min(lhs, rhs);
 }
 </code></pre>
-<h2 id="cout-para-vectores-y-pares"><a class="header" href="#cout-para-vectores-y-pares">cout para vectores y pares</a></h2>
+<h2 id="funciones-para-debuggear"><a class="header" href="#funciones-para-debuggear">Funciones para debuggear</a></h2>
 <pre><code class="language-cpp">// printea pairs, sirve para debuggear
 template &lt;typename T, typename U&gt;
 ostream &amp;operator&lt;&lt;(ostream &amp;os, const pair&lt;T, U&gt; &amp;p)
 {
-    os &lt;&lt; &quot;(&quot; &lt;&lt; p.first &lt;&lt; &quot;, &quot; &lt;&lt; p.second &lt;&lt; &quot;)&quot;;
+    os &lt;&lt; "(" &lt;&lt; p.first &lt;&lt; ", " &lt;&lt; p.second &lt;&lt; ")";
     return os;
 }
 
@@ -241,14 +242,14 @@ ostream &amp;operator&lt;&lt;(ostream &amp;os, const pair&lt;T, U&gt; &amp;p)
 template &lt;typename T&gt;
 ostream &amp;operator&lt;&lt;(ostream &amp;os, const vector&lt;T&gt; &amp;v)
 {
-    os &lt;&lt; &quot;[&quot;;
+    os &lt;&lt; "[";
     forn(i, sz(v))
     {
         if (i &gt; 0)
-            os &lt;&lt; &quot;, &quot;;
+            os &lt;&lt; ", ";
         os &lt;&lt; v[i];
     }
-    os &lt;&lt; &quot;]&quot;;
+    os &lt;&lt; "]";
     return os;
 }
 </code></pre>
@@ -260,7 +261,7 @@ ostream &amp;operator&lt;&lt;(ostream &amp;os, const vector&lt;T&gt; &amp;v)
 #define dforsn(i, s, n) for (tint i = tint(n) - 1; i &gt;= s; i--)
 #define sz(x) tint(x.size())
 #define all(x) x.begin(), x.end()
-#define DBG(x) cerr &lt;&lt; #x &lt;&lt; &quot; = &quot; &lt;&lt; x &lt;&lt; endl
+#define DBG(x) cerr &lt;&lt; #x &lt;&lt; " = " &lt;&lt; x &lt;&lt; endl
 
 using namespace std;
 
@@ -273,7 +274,7 @@ inline void fastIO() {
   cin.tie(NULL);
 }
 
-inline string YN(bool x, string y = &quot;YES&quot;, string n = &quot;NO&quot;) { return (x ? y : n); }
+inline string YN(bool x, string y = "YES", string n = "NO") { return (x ? y : n); }
 
 template &lt;typename T&gt;
 inline void chmax(T &amp;lhs, T rhs) {
@@ -287,34 +288,35 @@ inline void chmin(T &amp;lhs, T rhs) {
 
 template &lt;typename T, typename U&gt;
 ostream &amp;operator&lt;&lt;(ostream &amp;os, const pair&lt;T, U&gt; &amp;p) {
-  os &lt;&lt; &quot;(&quot; &lt;&lt; p.first &lt;&lt; &quot;, &quot; &lt;&lt; p.second &lt;&lt; &quot;)&quot;;
+  os &lt;&lt; "(" &lt;&lt; p.first &lt;&lt; ", " &lt;&lt; p.second &lt;&lt; ")";
   return os;
 }
 
 template &lt;typename T&gt;
 ostream &amp;operator&lt;&lt;(ostream &amp;os, const vector&lt;T&gt; &amp;v) {
-  os &lt;&lt; &quot;[&quot;;
+  os &lt;&lt; "[";
   forn(i, sz(v)) {
-    if (i &gt; 0) os &lt;&lt; &quot;, &quot;;
+    if (i &gt; 0) os &lt;&lt; ", ";
     os &lt;&lt; v[i];
   }
-  os &lt;&lt; &quot;]&quot;;
+  os &lt;&lt; "]";
   return os;
 }
 
 template &lt;typename T, size_t N&gt;
 ostream &amp;operator&lt;&lt;(ostream &amp;os, const array&lt;T, N&gt; &amp;v) {
-  os &lt;&lt; &quot;[&quot;;
+  os &lt;&lt; "[";
   forn(i, N) {
-    if (i &gt; 0) os &lt;&lt; &quot;, &quot;;
+    if (i &gt; 0) os &lt;&lt; ", ";
     os &lt;&lt; v[i];
   }
-  os &lt;&lt; &quot;]&quot;;
+  os &lt;&lt; "]";
   return os;
 }
 
 int main(){
     fastIO();
+    //aca empieza el problema
 }
 </code></pre>
 

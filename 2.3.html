@@ -92,7 +92,9 @@
             <div class="sidebar-scrollbox">
                 <ol class="chapter"><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">1.</strong> Prefacio</a></li><li class="chapter-item expanded "><a href="introduction_1.html"><strong aria-hidden="true">2.</strong> Introduccion</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2.1.html"><strong aria-hidden="true">2.1.</strong> Lenguajes de programación</a></li><li class="chapter-item expanded "><a href="2.2.html"><strong aria-hidden="true">2.2.</strong> Entrada y salida</a></li><li class="chapter-item expanded "><a href="2.3.html" class="active"><strong aria-hidden="true">2.3.</strong> Números y cómo representarlos</a></li><li class="chapter-item expanded "><a href="2.4.html"><strong aria-hidden="true">2.4.</strong> Template de C++</a></li><li class="chapter-item expanded "><a href="2.5.html"><strong aria-hidden="true">2.5.</strong> Cómo Practicar</a></li></ol></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
 
         <!-- Track and set sidebar scroll position -->
@@ -176,19 +178,15 @@
                         <h1 id="números-y-cómo-representarlos"><a class="header" href="#números-y-cómo-representarlos">Números y cómo representarlos</a></h1>
 <p>Tipos de números frecuentes en programación competitiva:</p>
 <ul>
-<li>
-<p><strong>int</strong> - representa números enteros y existe entre [\(-2^{31}\), \(2^{31} - 1\)], suele ser usado en la mayoria de los contextos.</p>
-</li>
-<li>
-<p><strong>long double</strong> - se usa en entornos donde queremos representar un número que no es entero. Esto común en problemas de geometría o de simulación de un proceso físico, por ejemplo. Este número no es exacto y puede tener errores de precisión. Por lo general, en problemas donde se necesita una representación no entera, los enunciados piden que genere la respuesta con una precisión de 1e-6. Una forma común de lidiar con esto es:</p>
-<pre><code class="language-cpp">long double number = 0.12312;
-int digits = 6; // for 1e-6
-cout &lt;&lt; fixed &lt;&lt; setprecision(digits) &lt;&lt; number;
+<li><strong>int</strong> - representa números enteros y existe entre [\(-2^{31}\), \(2^{31} - 1\)], suele ser usado en la mayoria de los contextos.</li>
+<li><strong>long double</strong> - se usa en entornos donde queremos representar un número que no es entero. Esto es común en problemas de geometría o de simulación de un proceso físico, por ejemplo. Este número no es exacto y puede tener errores de precisión. Por lo general, en problemas donde se necesita una representación no entera, los enunciados piden que se genere la respuesta sujeta a una precisión fija (un número típico es \(10^{-6}\)). Una forma común de lidiar con esto es:</li>
+</ul>
+<pre><code class="language-cpp">    long double number = 0.12312;
+    int digits = 6; // for 1e-6
+    cout &lt;&lt; fixed &lt;&lt; setprecision(digits) &lt;&lt; number;
 </code></pre>
-</li>
-<li>
-<p><strong>long long int</strong> - este es un número entero pero con el doble de bits. Se usa cuando un <strong>int</strong> no es suficiente. En mi opinión, este es el tipo de datos más útil y normalmente lo uso de forma predeterminada, en lugar de <strong>int</strong>.</p>
-</li>
+<ul>
+<li><strong>long long int</strong> - este es un número entero pero con el doble de bits. Se usa cuando un <strong>int</strong> no es suficiente. En mi opinión, este es el tipo de datos más útil y normalmente lo uso de forma predeterminada, en lugar de <strong>int</strong>.</li>
 </ul>
 
                     </main>
