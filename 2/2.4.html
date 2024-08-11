@@ -176,7 +176,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="template-de-c"><a class="header" href="#template-de-c">Template de C++</a></h1>
-<p>Un aspecto clave de la programación competitiva es el tiempo: si tenés una solución correcta para un problema, pero te lleva horas implementarla, entonces estás perdiendo tiempo que podrías utilizar para pensar en otros problemas. Comparto mi template, comentada con explicaciones.</p>
+<p>Un aspecto clave de la programación competitiva es el tiempo: si tenés una solución correcta para un problema, pero te llevaría horas implementarla, entonces estás perdiendo tiempo que podrías usar para pensar en otros problemas. Comparto mi template, comentada con explicaciones.</p>
 <h2 id="macros"><a class="header" href="#macros">Macros</a></h2>
 <pre><code class="language-cpp">#define forn(i, n) for (tint i = 0; i &lt; tint(n); i++)
 #define forsn(i, s, n) for (tint i = s; i &lt; tint(n); i++)
@@ -187,13 +187,13 @@
 #define DBG(x) cerr &lt;&lt; #x &lt;&lt; " = " &lt;&lt; x &lt;&lt; endl
 </code></pre>
 <ul>
-<li><strong>forn(i, n)</strong> - es un for que recorre los números desde el 0 hasta el n-1, la i es un placeholder para la variable de iteración.</li>
-<li><strong>forsn(i, s, n)</strong> - es lo mismo solo que, en vez de arrancar en 0, arranca en s.</li>
-<li><strong>dforn(i, n)</strong> - mismo rango que forn solo que recorre el for en el orden opuesto.</li>
-<li><strong>dforsn(i, s, n)</strong> - mismo rango que forsn pero recorre en orden opuesto.</li>
-<li><strong>sz(x)</strong> - consigue el tamaño de la variable y castea a tint (se explica más adelante).</li>
-<li><strong>all(x)</strong> - representa los iteradores de inicio y final de una variable, lo que permite ordenar un vector de la siguiente forma sort(all(vector)).</li>
-<li><strong>DBG(x)</strong> - printea en la consola de error el nombre de la variable y al lado su valor. Es especialmente util para debuggear.</li>
+<li><strong>forn(i, n)</strong> - es un <strong>for</strong> que recorre los números desde el 0 hasta el n-1. La i es un <em>placeholder</em> para la variable de iteración.</li>
+<li><strong>forsn(i, s, n)</strong> - es similar a lo anterior, solo que, en vez de arrancar en 0, arranca en s.</li>
+<li><strong>dforn(i, n)</strong> - mismo rango que <strong>forn</strong> solo que recorre el <strong>for</strong> en el orden opuesto.</li>
+<li><strong>dforsn(i, s, n)</strong> - mismo rango que <strong>forsn</strong> pero recorre en orden opuesto.</li>
+<li><strong>sz(x)</strong> - consigue el tamaño de la variable y castea a <strong>tint</strong> (se explica más adelante).</li>
+<li><strong>all(x)</strong> - representa los iteradores de inicio y final de una variable, lo que permite ordenar un vector de la siguiente forma <strong>sort(all(vector))</strong>.</li>
+<li><strong>DBG(x)</strong> - imprime en la consola de error el nombre de la variable y al lado su valor. Es especialmente útil para debuggear.</li>
 </ul>
 <h2 id="otras-abreviaciones"><a class="header" href="#otras-abreviaciones">Otras abreviaciones</a></h2>
 <pre><code class="language-cpp">using namespace std;
@@ -202,8 +202,8 @@ using vi = vector&lt;tint&gt;;
 using pii = pair&lt;tint, tint&gt;;
 </code></pre>
 <ul>
-<li><strong>using namespace std</strong> - se usa para no tener que andar escribiendo std:cout, std:cin, etc. Es una mala practica, pero como estamos en programación competitiva eso no nos importa.</li>
-<li><strong>tint</strong> - define el type of int, o tipo de número que vamos a utilizar en el problema. Esto es para evitar cometer errores de tipo y acostumbrarse a escribir tint, en vez de tener que pensar cada vez que escribimos una variable.</li>
+<li><strong>using namespace std</strong> - se usa para no tener que andar escribiendo <strong>std:cout</strong>, <strong>std:cin</strong>, etc. Es una mala practica, pero como estamos en programación competitiva eso no nos importa.</li>
+<li><strong>tint</strong> - define el <em>type of int</em>, o tipo de número que vamos a utilizar en el problema. Esto es para evitar cometer errores de tipo y acostumbrarse a escribir tint, en vez de tener que pensar cada vez que escribimos una variable.</li>
 <li><strong>vi</strong> - vector de tints.</li>
 <li><strong>pii</strong> - par de tints.</li>
 </ul>
@@ -214,9 +214,9 @@ using pii = pair&lt;tint, tint&gt;;
     cin.tie(NULL);
 }
 </code></pre>
-<p>Esta función suele ser llamada en la primera línea del main en C++, se encarga de optimizar <strong>std::cin</strong> y <strong>std::cout</strong>, que por default son lentos.</p>
+<p>Esta función suele ser llamada en la primera línea del <strong>main</strong> en C++, se encarga de optimizar <strong>std::cin</strong> y <strong>std::cout</strong>, que por default son lentos.</p>
 <h2 id="chmax-y-chmin"><a class="header" href="#chmax-y-chmin">chmax y chmin</a></h2>
-<p>La idea de estas funciones es generalizar funciones nativas del lenguaje como +=, &amp;= o |=. chmax(variable, valor) actualiza a la variable de esta forma: variable = max(variable, valor). chmin hace lo mismo pero con el minimo.</p>
+<p>La idea de estas funciones es generalizar funciones nativas del lenguaje como <strong>+=, &amp;= o |=</strong>. <strong>chmax(variable, valor)</strong> actualiza a la variable de esta forma: variable = <strong>max(variable, valor)</strong>. <strong>chmin</strong> hace lo mismo pero con el minimo.</p>
 <pre><code class="language-cpp">template &lt;typename T&gt;
 inline void chmax(T &amp;lhs, T rhs)
 {

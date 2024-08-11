@@ -187,18 +187,17 @@
 <blockquote>
 <p>Importancia: <font color="green">Alta</font></p>
 </blockquote>
-<p>Cualquiera que haya cursado las primeras clases de probabilidad está familiarizado con el coeficiente binomial: la forma de contar cuántas formas existen para elegir \(k\) elementos de un conjunto de \(n\) elementos posibles. Disponemos de una fórmula cerrada para calcularlo, que seguramente conocen:</p>
+<p>Si cursaron probabilidad, están familiarizados con el coeficiente binomial: la forma de contar cuántas formas existen para elegir \(k\) elementos de un conjunto de \(n\) elementos posibles. Disponemos de una fórmula cerrada para calcularlo:</p>
 <p>$$
 {n \choose k} = \frac{n!}{(n-k)!k!}
 $$</p>
-<p>El problema con esta fórmula es que necesitamos conocer los valores de \(n!\), \((n-k)!\) y \(k!\) para calcularla "explícitamente". El gran inconveniente es que los números factoriales crecen de manera descomunal. Por ejemplo, \(100 \choose 4\) es \(3, 921, 225, \) pero si quisiéramos calcularlo con la fórmula que conocemos, necesitaríamos primero calcular \(100! = 9.33 \times 10^{157}\), lo que es aproximadamente dos veces mayor que la cantidad de átomos en el universo conocido. Es decir, para la mayoría de nuestros usos, los números que queremos calcular son razonablemente pequeños, pero los factoriales necesarios son ridículamente grandes.</p>
+<p>El problema con esta fórmula es que necesitamos conocer los valores de \(n!\), \((n-k)!\) y \(k!\) para calcularla explícitamente. El inconveniente es que los números factoriales aumentan en valor absoluto de manera muy rápida. Por ejemplo, \(100 \choose 4\) es \(3, 921, 225, \) pero si quisiéramos calcularlo con la fórmula que conocemos, necesitaríamos primero calcular \(100! = 9.33 \times 10^{157}\), lo que es aproximadamente dos veces mayor que la cantidad de átomos en el universo conocido. Es decir, para la mayoría de nuestros usos, los números que queremos calcular son razonablemente pequeños, pero los factoriales necesarios son extremadamente grandes.</p>
 <h3 id="triángulo-de-pascal"><a class="header" href="#triángulo-de-pascal">Triángulo de Pascal</a></h3>
 <p>La solución es la siguiente recurrencia:
 $$\binom{n}{k} = \binom{n - 1}{k - 1} + \binom{n - 1}{k}$$</p>
-<p>La intuición detrás de esto es fijar un elemento \(x\) como parte de nuestro conjunto respuesta y elegir \(k − 1\) elementos de los \(n − 1\) restantes (primer termino), o elegir \(k\) de entre \(n − 1\) elementos restantes, si excluimos a x del conjunto respuesta (segundo termino).</p>
 <p>Los casos base de la recurrencia son:</p>
 <p>$$\binom{n}{0} = \binom{n}{n} = 1$$</p>
-<p>porque existe una única forma de elegir un conjunto de 0 elementos o uno que incluya a todos.</p>
+<p>Siendo que existe una única forma de elegir un conjunto de 0 elementos, o uno que incluya a todos.</p>
 <p>Esta fórmula recursiva es conocida como el <strong>Triángulo de Pascal</strong>.</p>
 <pre><code class="language-cpp">tint binomial(tint n, tint k)
 {

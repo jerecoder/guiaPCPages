@@ -184,10 +184,10 @@
 <blockquote>
 <p>Importancia: <font color="green">Alta</font></p>
 </blockquote>
-<p>Un entero positivo \(a\) es divisor o factor de un entero \(b\), si \(b\) es divisible por \(a\), que implica que existe un entero \(k\) tal que \(b = ka\). Un entero \(n &gt; 1\) es primo si sus únicos divisores son \(1\) y \(n\). Los enteros mayores que \(1\) que no son primos son llamados compuestos.</p>
-<p>Cualquier entero positivo tiene una única factorización prima: una forma de descomponerlo como una multiplicación de primos, de la siguiente forma:</p>
+<p>Un entero positivo \(a\) es divisor o factor de un entero \(b\), si \(b\) es divisible por \(a\), lo que implica que existe un entero \(k\) tal que \(b = ka\). Un entero \(n &gt; 1\) es primo si sus únicos divisores son \(1\) y \(n\). Los enteros mayores que \(1\) y que no son primos son llamados compuestos.</p>
+<p>Cualquier entero positivo tiene una única factorización prima, una forma de descomponerlo como una multiplicación de primos, de la siguiente forma</p>
 <p>$$n = {p_1}^{a_1} {p_2}^{a_2} \cdots {p_k}^{a_k}$$</p>
-<p>Donde \(p_i\) son distintos primos y las \(a_i\) son enteros positivos.</p>
+<p>Donde \(p_i\) son primos diferentes y las \(a_i\) son enteros positivos.</p>
 <h3 id="algoritmo-factorización-de-primos-singular"><a class="header" href="#algoritmo-factorización-de-primos-singular"><strong>Algoritmo:</strong> Factorización de Primos (singular)</a></h3>
 <pre><code class="language-cpp">vi factor(tint n) {
     vi ret;
@@ -210,7 +210,7 @@
 </ul>
 <p>Este algoritmo tiene complejidad \(\Theta(\sqrt{n})\), ya que iteramos por los factores \(i \leq \sqrt{n}\). Podría resultar confuso que quede esta complejidad, siendo que tenemos un while adentro del for, pero como este se encarga de dividir a \(n\), esta acelerando el código.</p>
 <h3 id="algoritmo-criba-de-eratóstenes"><a class="header" href="#algoritmo-criba-de-eratóstenes"><strong>Algoritmo:</strong> Criba de Eratóstenes</a></h3>
-<p>Bien, ahora sabemos cómo encontrar la descomposición en primos de un número. Pero ¿cómo hacemos para encontrar a todos los primos menores a un número arbitrario \(n\)?. Podríamos implementar una función <strong>es_primo(n)</strong> que funcione en \(\Theta(\sqrt{n})\) y simplemente iterar por los números entre 1 y \(n\), fijandonos individualmente si son primos, la complejidad seria \(\Theta(n \sqrt{n})\). Sin embargo, resulta que podemos resolver este problema en tan solo \(\Theta (n\log(n))\).</p>
+<p>Ahora sabemos cómo encontrar la descomposición en primos de un número. Pero ¿cómo hacemos para encontrar a todos los primos menores a un número arbitrario \(n\)? podríamos implementar una función <strong>es_primo(n)</strong> que funcione en \(\Theta(\sqrt{n})\) y simplemente iterar por los números entre 1 y \(n\), llamando a esta función por cada numero. La complejidad seria \(\Theta(n \sqrt{n})\). Resulta que podemos resolver este problema en tan solo \(\Theta (n\log(n))\).</p>
 <pre><code class="language-cpp">tint n;
 vector&lt;bool&gt; is_prime(n+1, 1);
 is_prime[0] = is_prime[1] = false;
@@ -280,13 +280,13 @@ $$4 = \text{{2, 0}}$$</p>
 <blockquote>
 <p>Importancia: <font color="green">Alta</font></p>
 </blockquote>
-<p>En varias ocasiones es útil recordar las operaciones de GCD y LCM cuando trabajamos con enteros. Por ahora simplemente se dan las definiciones:</p>
+<p>En varias ocasiones es útil recordar las operaciones de <strong>GCD</strong> y <strong>LCM</strong> cuando trabajamos con enteros. Por ahora simplemente se dan las definiciones:</p>
 <ul>
-<li>gcd(a, b): "Greatest Common Divisor", el entero mas grande que divide tanto a \(a\) como a \(b\). Si gcd(a, b) == 1 se dice "a y b son coprimos".</li>
-<li>lcm(a, b) = a*b/gcd(a, b)</li>
+<li><strong>gcd(a, b)</strong>: <em>Greatest Common Divisor</em>, el entero mas grande que divide tanto a \(a\) como a \(b\). Si <strong>gcd(a, b) == 1</strong> se dice <em>"a y b son coprimos"</em>.</li>
+<li><strong>lcm(a, b) = a*b/gcd(a, b)</strong></li>
 </ul>
 <blockquote>
-<p>Nota: a partir de C++17 gcd es una operación incluida en la librería estándar, es decir, se puede hacer gcd(a, b) sin necesidad de incluir código extra.</p>
+<p>Nota: a partir de C++17 <strong>gcd</strong> es una operación incluida en la librería estándar, es decir, se puede hacer <strong>gcd(a, b)</strong> sin necesidad de incluir código extra.</p>
 </blockquote>
 <h2 id="phi-de-euler"><a class="header" href="#phi-de-euler">Phi de Euler</a></h2>
 <blockquote>
