@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">1.</strong> Prefacio</a></li><li class="chapter-item expanded "><a href="introduction_1.html"><strong aria-hidden="true">2.</strong> Introduccion</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2.1.html"><strong aria-hidden="true">2.1.</strong> Lenguajes de programación</a></li><li class="chapter-item expanded "><a href="2.2.html"><strong aria-hidden="true">2.2.</strong> Entrada y salida</a></li><li class="chapter-item expanded "><a href="2.3.html"><strong aria-hidden="true">2.3.</strong> Números y cómo representarlos</a></li><li class="chapter-item expanded "><a href="2.4.html"><strong aria-hidden="true">2.4.</strong> Template de C++</a></li><li class="chapter-item expanded "><a href="2.5.html"><strong aria-hidden="true">2.5.</strong> Cómo Practicar</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">1.</strong> Prefacio</a></li><li class="chapter-item expanded "><a href="introduction_1.html"><strong aria-hidden="true">2.</strong> Introduccion</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2/2.1.html"><strong aria-hidden="true">2.1.</strong> Lenguajes de programación</a></li><li class="chapter-item expanded "><a href="2/2.2.html"><strong aria-hidden="true">2.2.</strong> Entrada y salida</a></li><li class="chapter-item expanded "><a href="2/2.3.html"><strong aria-hidden="true">2.3.</strong> Números y cómo representarlos</a></li><li class="chapter-item expanded "><a href="2/2.4.html"><strong aria-hidden="true">2.4.</strong> Template de C++</a></li><li class="chapter-item expanded "><a href="2/2.5.html"><strong aria-hidden="true">2.5.</strong> Cómo Practicar</a></li><li class="chapter-item expanded "><a href="2/2.6.html"><strong aria-hidden="true">2.6.</strong> Problemas Introductorios</a></li></ol></li><li class="chapter-item expanded "><a href="3/Introduccion.html"><strong aria-hidden="true">3.</strong> Matematicas</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3/divisibilidad.html"><strong aria-hidden="true">3.1.</strong> Divisibilidad</a></li><li class="chapter-item expanded "><a href="3/modular.html"><strong aria-hidden="true">3.2.</strong> aritmética Modular</a></li><li class="chapter-item expanded "><a href="3/combi.html"><strong aria-hidden="true">3.3.</strong> Combinatoria</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -177,14 +177,13 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="prefacio"><a class="header" href="#prefacio">Prefacio</a></h1>
-<p>El propósito de este documento es dar una idea general de lo que es la programación competitiva e interesar a los estudiantes de grado de la Universidad de San Andrés en participar en esta actividad. Este documento de ninguna manera es completo, ya que hay una cantidad casi infinita de temas que podrían aparecer en una competencia. Sin embargo, mi objetivo es ofrecer una visión general de los temas más importantes, junto con soluciones a problemas clásicos y algunos otros más miscelaneos. Casi todos los problemas se tomarán de <a href="https://cses.fi/">CSES</a>, y se recomienda encarecidamente que el lector implemente todas las soluciones que comprenda.</p>
-<p>Adicionalmente, se sugiere una división de equipos categorizada en 3 roles, detallada en la seccion de <a href="2.5.html">cómo practicar</a>. Esta division se usa para particionar el libro, de tal forma que cada miembro del equipo puede leer solamente la parte que le corresponde.</p>
+<p>El propósito de este documento es dar una idea general de lo que es la programación competitiva e interesar a los estudiantes de grado de la Universidad de San Andrés en participar en esta actividad. Este documento de ninguna manera es completo, ya que hay una cantidad casi infinita de temas que podrían aparecer en una competencia. Sin embargo, mi objetivo es ofrecer una visión general de los temas más importantes, junto con soluciones a problemas clásicos y algunos otros más misceláneos. Casi todos los problemas se tomarán de <a href="https://cses.fi/">CSES</a>, y se recomienda encarecidamente que el lector implemente todas las soluciones que comprenda.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="1-introducción"><a class="header" href="#1-introducción">1 Introducción</a></h1>
 <p>La programación competitiva es una disciplina que se ocupa de la creación e implementación de algoritmos bajo una limitación de tiempo. Por lo general, a los concursantes se les presenta un conjunto común de problemas, que pueden tener o no una diferencia de puntuación, y el ganador es el concursante o equipo con mayor puntaje y menor penalidad (esta suele ser una combinación entre tiempo de resolución y envíos incorrectos).</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="lenguajes-de-programación"><a class="header" href="#lenguajes-de-programación">Lenguajes de programación</a></h1>
-<p>Los lenguajes de programación permitidos varían de una competencia a otra, permitiendo en algunos casos el uso de lenguajes no estándar como <em>Kotlin</em> o <em>Haskell</em>. Sin embargo, en su mayor parte, se permiten <em>C++</em> y <em>Java</em>. Esta guía estará escrita en <em>C++</em> y se espera que el lector esté familiarizado con <em>C</em>. De todas formas, exceptuando las líneas de código, los temas están dados de forma general.</p>
+<p>Los lenguajes de programación permitidos varían de una competencia a otra, permitiendo en algunos casos el uso de lenguajes no estándar como <em>Kotlin</em> o <em>Haskell</em>. Sin embargo, en su mayor parte, se permiten <em>C++</em>, <em>Python</em> y <em>Java</em>. Esta guía estará escrita en <em>C++</em> y se espera que el lector esté familiarizado con <em>C</em>. De todas formas, exceptuando las líneas de código, los temas están dados de forma general.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="entrada-y-salida"><a class="header" href="#entrada-y-salida">Entrada y salida</a></h1>
-<p>Dijimos que la programación competitiva se ocupa de la <em>creación e implementación de algoritmos</em>, sin embargo, no hemos especificado cómo sucede esto en la competencia. Normalmente, la interacción ocurre mediante la salida estándar y entrada estándar. Es decir, nos dan un <em>input</em> por la entrada estandar y debemos responder con el <em>output</em> correcto.</p>
+<p>Dijimos que la programación competitiva se ocupa de la <em>creación e implementación de algoritmos</em>, sin embargo, no hemos especificado cómo sucede esto en la competencia. Normalmente, la interacción ocurre mediante la salida estándar y entrada estándar. Es decir, nos dan un <em>input</em> por la entrada estándar y debemos responder con el <em>output</em> correcto.</p>
 <p>En C++, esto es <strong>cin</strong> para entrada y <strong>cout</strong> para salida.</p>
 <p>Como ejemplo veremos la solución para <a href="https://codeforces.com/problemset/problem/1772/A">este</a> problema:</p>
 <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
@@ -206,7 +205,7 @@ int main()
 <div style="break-before: page; page-break-before: always;"></div><h1 id="números-y-cómo-representarlos"><a class="header" href="#números-y-cómo-representarlos">Números y cómo representarlos</a></h1>
 <p>Tipos de números frecuentes en programación competitiva:</p>
 <ul>
-<li><strong>int</strong> - representa números enteros y existe entre [\(-2^{31}\), \(2^{31} - 1\)], suele ser usado en la mayoria de los contextos.</li>
+<li><strong>int</strong> - representa números enteros y existe entre [\(-2^{31}\), \(2^{31} - 1\)], suele ser usado en la mayoría de los contextos.</li>
 <li><strong>long double</strong> - se usa en entornos donde queremos representar un número que no es entero. Esto es común en problemas de geometría o de simulación de un proceso físico, por ejemplo. Este número no es exacto y puede tener errores de precisión. Por lo general, en problemas donde se necesita una representación no entera, los enunciados piden que se genere la respuesta sujeta a una precisión fija (un número típico es \(10^{-6}\)). Una forma común de lidiar con esto es:</li>
 </ul>
 <pre><code class="language-cpp">    long double number = 0.12312;
@@ -228,7 +227,7 @@ int main()
 #define DBG(x) cerr &lt;&lt; #x &lt;&lt; " = " &lt;&lt; x &lt;&lt; endl
 </code></pre>
 <ul>
-<li><strong>forn(i, n)</strong> - es un for que recorre los numeros desde el 0 hasta el n-1, la i es un placeholder para la variable de iteración.</li>
+<li><strong>forn(i, n)</strong> - es un for que recorre los números desde el 0 hasta el n-1, la i es un placeholder para la variable de iteración.</li>
 <li><strong>forsn(i, s, n)</strong> - es lo mismo solo que, en vez de arrancar en 0, arranca en s.</li>
 <li><strong>dforn(i, n)</strong> - mismo rango que forn solo que recorre el for en el orden opuesto.</li>
 <li><strong>dforsn(i, s, n)</strong> - mismo rango que forsn pero recorre en orden opuesto.</li>
@@ -243,12 +242,12 @@ using vi = vector&lt;tint&gt;;
 using pii = pair&lt;tint, tint&gt;;
 </code></pre>
 <ul>
-<li><strong>using namespace std</strong> - se usa para no tener que andar escribiendo std:cout, std:cin, etc. Es una mala practica, pero como estamos en programacion competitiva eso no nos importa.</li>
-<li><strong>tint</strong> - define el type of int, o tipo de numero que vamos a utilizar en el problema. Esto es para evitar cometer errores de tipo y acostumbrarse a escribir tint, en vez de tener que pensar cada vez que escribimos una variable.</li>
+<li><strong>using namespace std</strong> - se usa para no tener que andar escribiendo std:cout, std:cin, etc. Es una mala practica, pero como estamos en programación competitiva eso no nos importa.</li>
+<li><strong>tint</strong> - define el type of int, o tipo de número que vamos a utilizar en el problema. Esto es para evitar cometer errores de tipo y acostumbrarse a escribir tint, en vez de tener que pensar cada vez que escribimos una variable.</li>
 <li><strong>vi</strong> - vector de tints.</li>
 <li><strong>pii</strong> - par de tints.</li>
 </ul>
-<h2 id="optimizacion-de-inputoutput"><a class="header" href="#optimizacion-de-inputoutput">Optimizacion de Input/Output</a></h2>
+<h2 id="optimización-de-inputoutput"><a class="header" href="#optimización-de-inputoutput">Optimización de Input/Output</a></h2>
 <pre><code class="language-cpp">inline void fastIO()
 {
     ios_base::sync_with_stdio(false);
@@ -361,20 +360,283 @@ int main(){
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cómo-practicar"><a class="header" href="#cómo-practicar">Cómo practicar</a></h1>
-<h2 id="caso-general"><a class="header" href="#caso-general">Caso general</a></h2>
 <p>Practicar no es trivial, ya que depende de la resiliencia, conocimiento y motivación del estudiante. A continuación, se enlazan algunos recursos útiles sobre este tema:</p>
 <ul>
 <li><a href="https://codeforces.com/blog/entry/91114">My opinion on how to practice competitive programming - Radewoosh</a></li>
 <li><a href="https://codeforces.com/blog/entry/98806">How to practice Competitive Programming - Um_nik</a></li>
 </ul>
-<h2 id="caso-equipos"><a class="header" href="#caso-equipos">Caso equipos</a></h2>
-<p>Se sugiere la siguiente división de roles:</p>
-<h3 id="matemáticas--programación-dinámica"><a class="header" href="#matemáticas--programación-dinámica">Matemáticas + Programación Dinámica</a></h3>
-<p>La persona más precisa del equipo debería tomar este rol.</p>
-<h3 id="ordenamiento--búsqueda"><a class="header" href="#ordenamiento--búsqueda">Ordenamiento + Búsqueda</a></h3>
-<p>La persona más dedicada del equipo debería tomar este rol.</p>
-<h3 id="grafos"><a class="header" href="#grafos">Grafos</a></h3>
-<p>La persona más creativa del equipo debería tomar este rol.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="problemas-introductorios"><a class="header" href="#problemas-introductorios">Problemas Introductorios</a></h1>
+<p>Para irse familiarizando con la programación competitiva, se sugieren los siguientes problemas introductorios:</p>
+<ul>
+<li><a href="https://cses.fi/problemset/task/1617">Bit Strings</a></li>
+<li><a href="https://cses.fi/problemset/task/1754">Coin Piles</a></li>
+<li><a href="https://cses.fi/problemset/task/2165">Tower of Hanoi</a></li>
+<li><a href="https://cses.fi/problemset/task/2165">Number Spiral</a></li>
+<li><a href="https://cses.fi/problemset/task/1625">Grid Paths</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="matemáticas"><a class="header" href="#matemáticas">Matemáticas</a></h1>
+<p>A diferencia de los otros temas que serán mencionados en la guía, es esperable que no estén familiarizados con la mayoría de los algoritmos en esta sección, por eso se recomienda que sea leída por todos los integrantes del equipo.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="divisibilidad"><a class="header" href="#divisibilidad">Divisibilidad</a></h1>
+<blockquote>
+<p>Importancia: <font color="green">Alta</font></p>
+</blockquote>
+<center><i>Los primos son legos</i></center>
+<h2 id="primos"><a class="header" href="#primos">Primos</a></h2>
+<blockquote>
+<p>Importancia: <font color="green">Alta</font></p>
+</blockquote>
+<p>Un entero positivo \(a\) es divisor o factor de un entero \(b\), si \(b\) es divisible por \(a\), que implica que existe un entero \(k\) tal que \(b = ka\). Un entero \(n &gt; 1\) es primo si sus únicos divisores son \(1\) y \(n\). Los enteros mayores que \(1\) que no son primos son llamados compuestos.</p>
+<p>Cualquier entero positivo tiene una única factorización prima: una forma de descomponerlo como una multiplicación de primos, de la siguiente forma:</p>
+<p>$$n = {p_1}^{a_1} {p_2}^{a_2} \cdots {p_k}^{a_k}$$</p>
+<p>Donde \(p_i\) son distintos primos y las \(a_i\) son enteros positivos.</p>
+<h3 id="algoritmo-factorización-de-primos-singular"><a class="header" href="#algoritmo-factorización-de-primos-singular"><strong>Algoritmo:</strong> Factorización de Primos (singular)</a></h3>
+<pre><code class="language-cpp">vi factor(tint n) {
+    vi ret;
+    forsn(i, 2, sqrt(n)+1) 
+    {
+        while (n % i == 0) 
+        {
+            ret.push_back(i);
+            n /= i;
+        }
+    }
+    if (n &gt; 1)
+        ret.push_back(n);
+    return ret;
+}
+</code></pre>
+<ul>
+<li>Memoria: \( \Theta(1) \)</li>
+<li>Complejidad \( \Theta(\sqrt{n}) \)</li>
+</ul>
+<p>Este algoritmo tiene complejidad \(\Theta(\sqrt{n})\), ya que iteramos por los factores \(i \leq \sqrt{n}\). Podría resultar confuso que quede esta complejidad, siendo que tenemos un while adentro del for, pero como este se encarga de dividir a \(n\), esta acelerando el código.</p>
+<h3 id="algoritmo-criba-de-eratóstenes"><a class="header" href="#algoritmo-criba-de-eratóstenes"><strong>Algoritmo:</strong> Criba de Eratóstenes</a></h3>
+<p>Bien, ahora sabemos cómo encontrar la descomposición en primos de un número. Pero ¿cómo hacemos para encontrar a todos los primos menores a un número arbitrario \(n\)?. Podríamos implementar una función <strong>es_primo(n)</strong> que funcione en \(\Theta(\sqrt{n})\) y simplemente iterar por los números entre 1 y \(n\), fijandonos individualmente si son primos, la complejidad seria \(\Theta(n \sqrt{n})\). Sin embargo, resulta que podemos resolver este problema en tan solo \(\Theta (n\log(n))\).</p>
+<pre><code class="language-cpp">tint n;
+vector&lt;bool&gt; is_prime(n+1, 1);
+is_prime[0] = is_prime[1] = false;
+forsn(i, 2, n+1) 
+    if (is_prime[i])// si i es primo
+        for (tint j = i * 2; j &lt;= n; j += i)
+            is_prime[j] = false; //pinto a todos los a * i como compuestos
+</code></pre>
+<ul>
+<li>Memoria: \( \Theta(1) \)</li>
+<li>Complejidad \( \Theta(\sqrt{n}) \)</li>
+</ul>
+<p>La magia está en la serie armónica:</p>
+<blockquote>
+<p><strong>Serie armónica</strong> \(\sum_{i = 0}^{n}\frac{1}{i} = H_n \sim \Theta(\log(n))\)</p>
+</blockquote>
+<p>A lo sumo iteramos \(\frac{n}{i}\) veces por cada número (el número es menor ya que no iteramos por los compuestos). Entonces queda claro que la complejidad esta acotada por \(\mathcal{O}(n\log n)\).</p>
+<h3 id="algoritmo-factorización-de-primos-plural"><a class="header" href="#algoritmo-factorización-de-primos-plural"><strong>Algoritmo:</strong> Factorización de Primos (plural)</a></h3>
+<p>El algoritmo de factorización singular mencionado anteriormente es óptimo para encontrar la factorización de un número en particular, pero ¿qué pasa si necesitamos saber la factorización de \(n\) números?. Resulta tentador responder que podemos usar el algoritmo \(n\) veces, y es verdad... pero no es óptimo. Si hiciéramos esto nos quedaría un código con complejidad \(\Theta(n\sqrt{M})\), donde M es el máximo valor que puede tomar alguno de nuestros números. Esta complejidad no es muy buena. ¿Cómo podemos usar la <strong>criba de Eratóstenes</strong> para mejorar la complejidad?</p>
+<details>
+  <summary>Pista </summary>
+<p>Asumamos que tenemos precomputados los primos del 1 al \(n\), podemos mejorar nuestro algoritmo de factorización?</p>
+</details>
+<details>
+  <summary>Respuesta a la pista </summary>
+<p>En vez de iterar por todos los enteros menores a \(\sqrt{n}\), podemos iterar por todos los primos menores a \(\sqrt{n}\).</p>
+</details>
+<pre><code class="language-cpp">vi factor(tint n) {
+    vi ret;
+    for(auto &amp;i:primos) 
+    {
+        if(i * i &gt; n)// me pase de largo
+            break;
+        while (n % i == 0) 
+        {
+            ret.push_back(i);
+            n /= i;
+        }
+    }
+    if (n &gt; 1)
+        ret.push_back(n);
+    return ret;
+}
+</code></pre>
+<ul>
+<li>Memoria: \(\Theta(1)\)</li>
+<li>Complejidad: \(\Theta(log(n))\)</li>
+</ul>
+<p>Si repetimos este proceso para los \(n\) números, nos queda \( \Theta(n\log n)\) de preprocesamiento (criba) y \( \Theta(n\log n)\) de factorizar a todos los números, buenísimo.</p>
+<h3 id="cantidad-de-divisores"><a class="header" href="#cantidad-de-divisores">Cantidad de divisores</a></h3>
+<blockquote>
+<p>Importancia: <font color="yellow">Media</font></p>
+</blockquote>
+<p>Sabemos que
+$$n = {p_1}^{a_1} {p_2}^{a_2} \cdots {p_k}^{a_k}$$</p>
+<p>Ahora vemos que cada divisor \(d\) de un numero \(n\) puede ser pensado como un subconjunto de los primos que lo componen. Por ejemplo, 6 y 4 son divisores de 12 ya que:
+$$12 = 2^2 \cdot 3^1 $$
+$$6 = 2^1 \cdot 3^1$$
+$$4 = 2^2$$</p>
+<p>Cada divisor, entonces, puede ser expresado con un conjunto de exponentes asociados a los primos de la descomposición de \(n\).</p>
+<p>$$12 = \text{{2, 1}}$$
+$$6 = \text{{1, 1}}$$
+$$4 = \text{{2, 0}}$$</p>
+<p>De esto sale que la contar la cantidad de divisores equivale a contar la cantidad de representaciones de este tipo. Cada posición puede tomar un valor en el rango \([0, a_i]\). Por lo tanto, la cantidad de divisores es</p>
+<p>$$\prod_{i = 1}^{\text{k}} (a_i + 1) $$</p>
+<h2 id="gcd-y-lcm"><a class="header" href="#gcd-y-lcm">GCD y LCM</a></h2>
+<blockquote>
+<p>Importancia: <font color="green">Alta</font></p>
+</blockquote>
+<p>En varias ocasiones es útil recordar las operaciones de GCD y LCM cuando trabajamos con enteros. Por ahora simplemente se dan las definiciones:</p>
+<ul>
+<li>gcd(a, b): "Greatest Common Divisor", el entero mas grande que divide tanto a \(a\) como a \(b\). Si gcd(a, b) == 1 se dice "a y b son coprimos".</li>
+<li>lcm(a, b) = a*b/gcd(a, b)</li>
+</ul>
+<blockquote>
+<p>Nota: a partir de C++17 gcd es una operación incluida en la librería estándar, es decir, se puede hacer gcd(a, b) sin necesidad de incluir código extra.</p>
+</blockquote>
+<h2 id="phi-de-euler"><a class="header" href="#phi-de-euler">Phi de Euler</a></h2>
+<blockquote>
+<p>Importancia: <font color="red">Baja</font></p>
+</blockquote>
+<p>próximamente</p>
+<h2 id="problemas"><a class="header" href="#problemas">Problemas</a></h2>
+<ul>
+<li><a href="https://cses.fi/problemset/task/1713">Counting Divisors</a></li>
+<li><a href="https://cses.fi/problemset/task/1081">Common Divisors</a></li>
+<li><a href="https://cses.fi/problemset/task/1082">Sum of Divisors</a></li>
+<li><a href="https://cses.fi/problemset/task/2182">Divisor Analysis</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="aritmética-modular"><a class="header" href="#aritmética-modular">Aritmética Modular</a></h1>
+<blockquote>
+<p>Importancia: <font color="green">Alta</font></p>
+</blockquote>
+<center>
+<i>Los números no, sus restos.</i>
+</center>
+<p>En muchas situaciones, sucede que el problema lidia conceptualmente con números de magnitudes inmensas (\(&gt;10^{18}\)), lo que causa ciertas incomodidades cuando tenemos que operar con ellos. Resulta que una solución común a esta problemática es pedir el resultado módulo un número primo grande. En esta sección vemos operaciones básicas de la aritmética modular.</p>
+<h2 id="repaso-de-operaciones-básicas"><a class="header" href="#repaso-de-operaciones-básicas">Repaso de operaciones básicas</a></h2>
+<blockquote>
+<p>Importancia: <font color="green">Alta</font></p>
+</blockquote>
+<p>$$(a+b) \bmod m = (a \bmod m + b \bmod m) \bmod m$$</p>
+<p>$$(a-b) \bmod m = (a \bmod m - b \bmod m) \bmod m$$</p>
+<p>$$(a \cdot b) \pmod{m} = ((a \bmod m) \cdot (b \bmod m)) \bmod m$$</p>
+<p>$$a^b \bmod {m} = (a \bmod m)^b \bmod m$$</p>
+<h2 id="exponenciación-rápida-y-modular"><a class="header" href="#exponenciación-rápida-y-modular">Exponenciación Rápida (y modular)</a></h2>
+<blockquote>
+<p>Importancia: <font color="green">Alta</font></p>
+</blockquote>
+<p>Se muestra como exponenciar en \(\Theta(log(n))\). Como detalle, se añade que sea modular, pero esto es opcional.</p>
+<h3 id="algoritmo-modpow-exponenciación-rápida"><a class="header" href="#algoritmo-modpow-exponenciación-rápida"><strong>Algoritmo:</strong> modPow (Exponenciación Rápida)</a></h3>
+<pre><code class="language-cpp">tint modPow(tint x, tint n, const tint MOD)
+{
+    if (n == 0)
+        return 1;
+    tint ans = modPow(x, n / 2, MOD);
+    ans = (ans * ans) % MOD;
+    if (n % 2)
+        ans = (ans * x) % MOD;
+    return ans;
+}
+</code></pre>
+<ul>
+<li>Memoria: \( \Theta(1) \)</li>
+<li>Complejidad \( \Theta(\log{n}) \)</li>
+</ul>
+<h2 id="inversa-modular"><a class="header" href="#inversa-modular">Inversa Modular</a></h2>
+<blockquote>
+<p>Importancia: <font color="green">Alta</font></p>
+</blockquote>
+<p>Dividir no es tan fácil en la aritmética modular.</p>
+<h3 id="pequeño-teorema-de-fermat-fermatito"><a class="header" href="#pequeño-teorema-de-fermat-fermatito">Pequeño Teorema de Fermat (Fermatito)</a></h3>
+<blockquote>
+<p>Importancia: <font color="green">Alta</font></p>
+</blockquote>
+<p>Resulta que si el módulo es primo, podemos usar un famoso teorema de la teoría de números llamada "Pequeño teorema de Fermat", a veces cariñosamente referido como "Fermatito":</p>
+<p>$$
+a^{p-1}\equiv 1  \text{  (mod p)} \text{, con p primo}
+$$</p>
+<p>Separando el producto, nos queda</p>
+<p>$$
+a^{p-2}a\equiv 1  \text{  (mod p)}
+$$</p>
+<p>Con lo que podemos ver que \(a^{p-2}\) es la inversa modular de a. Por lo tanto, si necesitamos dividir por a, simplemente podemos multiplicar por \(a^{-1} \equiv a^{p-2}\)</p>
+<h3 id="algoritmo-inversa-modular"><a class="header" href="#algoritmo-inversa-modular"><strong>Algoritmo:</strong> Inversa modular</a></h3>
+<pre><code class="language-cpp">tint modInv(tint num, const tint MOD){
+    return modPow(num, MOD-2, MOD); // usamos la funcion de exponenciacion modular definida anteriormente.
+}
+</code></pre>
+<ul>
+<li>Memoria: \( \Theta(1) \)</li>
+<li>Complejidad \( \Theta(\log{n}) \)</li>
+</ul>
+<h4 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h4>
+<pre><code class="language-cpp">tint num = 19; // número cualquiera, módulo MOD
+tint numDivididoPor2 = (num * modInv(2, MOD)) % MOD;
+</code></pre>
+<h2 id="problemas-1"><a class="header" href="#problemas-1">Problemas</a></h2>
+<ul>
+<li><a href="https://cses.fi/problemset/task/1095">Exponentiation I</a></li>
+<li><a href="https://cses.fi/problemset/task/1712">Exponentiation II</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="combinatoria"><a class="header" href="#combinatoria">Combinatoria</a></h1>
+<blockquote>
+<p>Importancia: <font color="yellow">Media</font></p>
+</blockquote>
+<center>
+<i>Contar cosas puede ser difícil</i>
+</center>
+<p>Es común que en un problema se nos pregunte <em>"¿De cuántas formas podemos hacer X?"</em> o <em>"¿De cuántas formas podemos ganar un determinado juego desde una posición inicial?"</em>. Para este tipo de problemas, necesitamos recurrir a la combinatoria.</p>
+<h2 id="coeficiente-binomial"><a class="header" href="#coeficiente-binomial">Coeficiente Binomial</a></h2>
+<blockquote>
+<p>Importancia: <font color="green">Alta</font></p>
+</blockquote>
+<p>Cualquiera que haya cursado las primeras clases de probabilidad está familiarizado con el coeficiente binomial: la forma de contar cuántas formas existen para elegir \(k\) elementos de un conjunto de \(n\) elementos posibles. Disponemos de una fórmula cerrada para calcularlo, que seguramente conocen:</p>
+<p>$$
+{n \choose k} = \frac{n!}{(n-k)!k!}
+$$</p>
+<p>El problema con esta fórmula es que necesitamos conocer los valores de \(n!\), \((n-k)!\) y \(k!\) para calcularla "explícitamente". El gran inconveniente es que los números factoriales crecen de manera descomunal. Por ejemplo, \(100 \choose 4\) es \(3, 921, 225, \) pero si quisiéramos calcularlo con la fórmula que conocemos, necesitaríamos primero calcular \(100! = 9.33 \times 10^{157}\), lo que es aproximadamente dos veces mayor que la cantidad de átomos en el universo conocido. Es decir, para la mayoría de nuestros usos, los números que queremos calcular son razonablemente pequeños, pero los factoriales necesarios son ridículamente grandes.</p>
+<h3 id="triángulo-de-pascal"><a class="header" href="#triángulo-de-pascal">Triángulo de Pascal</a></h3>
+<p>La solución es la siguiente recurrencia:
+$$\binom{n}{k} = \binom{n - 1}{k - 1} + \binom{n - 1}{k}$$</p>
+<p>La intuición detrás de esto es fijar un elemento \(x\) como parte de nuestro conjunto respuesta y elegir \(k − 1\) elementos de los \(n − 1\) restantes (primer termino), o elegir \(k\) de entre \(n − 1\) elementos restantes, si excluimos a x del conjunto respuesta (segundo termino).</p>
+<p>Los casos base de la recurrencia son:</p>
+<p>$$\binom{n}{0} = \binom{n}{n} = 1$$</p>
+<p>porque existe una única forma de elegir un conjunto de 0 elementos o uno que incluya a todos.</p>
+<p>Esta fórmula recursiva es conocida como el <strong>Triángulo de Pascal</strong>.</p>
+<pre><code class="language-cpp">tint binomial(tint n, tint k)
+{
+
+    // dp[i][j] guarda iCj
+    vector&lt;vi&gt; dp(n + 1, vector&lt;tint&gt;(k + 1, 0));
+
+    // casos base descritos arriba
+    forn(i, n + 1)
+    {
+        dp[i][0] = 1;
+        if (i &lt;= k)
+            dp[i][i] = 1;
+    }
+
+    forn(i, n + 1)
+        forsn(j, 1, min(i, k) + 1)
+            dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j]); // usa la recurrencia de arriba
+
+    return dp[n][k];
+
+}
+</code></pre>
+<h2 id="subfactorial"><a class="header" href="#subfactorial">Subfactorial</a></h2>
+<blockquote>
+<p>Importancia: <font color="red">Baja</font></p>
+</blockquote>
+<p>próximamente.</p>
+<h2 id="números-de-catalán"><a class="header" href="#números-de-catalán">Números de Catalán</a></h2>
+<blockquote>
+<p>Importancia: <font color="red">Baja</font></p>
+</blockquote>
+<p>próximamente.</p>
+<h2 id="problemas-2"><a class="header" href="#problemas-2">Problemas</a></h2>
+<ul>
+<li><a href="https://cses.fi/problemset/task/1079">Binomial Coefficients</a></li>
+<li><a href="https://cses.fi/problemset/task/1715">Creating Strings</a></li>
+<li><a href="https://cses.fi/problemset/task/1716">Distributing Apples</a></li>
+</ul>
 
                     </main>
 
