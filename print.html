@@ -213,10 +213,10 @@ int main()
     cout &lt;&lt; fixed &lt;&lt; setprecision(digits) &lt;&lt; number;
 </code></pre>
 <ul>
-<li><strong>long long int</strong> - este es un número entero pero con el doble de bits. Se usa cuando un <strong>int</strong> no es suficiente. En mi opinión, este es el tipo de datos más útil y normalmente lo uso de forma predeterminada, en lugar de <strong>int</strong>.</li>
+<li><strong>long long int</strong> - este es un número entero pero con el doble de bits. Se usa cuando un <strong>int</strong> no es suficiente. En nuestra opinión, este es el tipo de datos más útil y normalmente se usa de forma predeterminada, en lugar de <strong>int</strong>.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="template-de-c"><a class="header" href="#template-de-c">Template de C++</a></h1>
-<p>Un aspecto clave de la programación competitiva es el tiempo: si tenés una solución correcta para un problema, pero te llevaría horas implementarla, entonces estás perdiendo tiempo que podrías usar para pensar en otros problemas. Comparto mi template, comentada con explicaciones.</p>
+<p>Un aspecto clave de la programación competitiva es el tiempo: si tenés una solución correcta para un problema, pero te llevaría horas implementarla, entonces estás perdiendo tiempo que podrías usar para pensar en otros problemas. Compartimos un posible template, comentado con explicaciones.</p>
 <h2 id="macros"><a class="header" href="#macros">Macros</a></h2>
 <pre><code class="language-cpp">#define forn(i, n) for (tint i = 0; i &lt; tint(n); i++)
 #define forsn(i, s, n) for (tint i = s; i &lt; tint(n); i++)
@@ -243,9 +243,9 @@ using pii = pair&lt;tint, tint&gt;;
 </code></pre>
 <ul>
 <li><strong>using namespace std</strong> - se usa para no tener que andar escribiendo <strong>std:cout</strong>, <strong>std:cin</strong>, etc. Es una mala practica, pero como estamos en programación competitiva eso no nos importa.</li>
-<li><strong>tint</strong> - define el <em>type of int</em>, o tipo de número que vamos a utilizar en el problema. Esto es para evitar cometer errores de tipo y acostumbrarse a escribir tint, en vez de tener que pensar cada vez que escribimos una variable.</li>
-<li><strong>vi</strong> - vector de tints.</li>
-<li><strong>pii</strong> - par de tints.</li>
+<li><strong>tint</strong> - define el <em>type of int</em>, o tipo de número que vamos a utilizar en el problema. Esto es para evitar cometer errores de tipo y acostumbrarse a escribir <strong>tint</strong>, en vez de tener que pensar cada vez que escribimos una variable.</li>
+<li><strong>vi</strong> - vector de <strong>tints</strong>.</li>
+<li><strong>pii</strong> - par de <strong>tints</strong>.</li>
 </ul>
 <h2 id="optimización-de-inputoutput"><a class="header" href="#optimización-de-inputoutput">Optimización de Input/Output</a></h2>
 <pre><code class="language-cpp">inline void fastIO()
@@ -256,7 +256,7 @@ using pii = pair&lt;tint, tint&gt;;
 </code></pre>
 <p>Esta función suele ser llamada en la primera línea del <strong>main</strong> en C++, se encarga de optimizar <strong>std::cin</strong> y <strong>std::cout</strong>, que por default son lentos.</p>
 <h2 id="chmax-y-chmin"><a class="header" href="#chmax-y-chmin">chmax y chmin</a></h2>
-<p>La idea de estas funciones es generalizar funciones nativas del lenguaje como <strong>+=, &amp;= o |=</strong>. <strong>chmax(variable, valor)</strong> actualiza a la variable de esta forma: variable = <strong>max(variable, valor)</strong>. <strong>chmin</strong> hace lo mismo pero con el minimo.</p>
+<p>La idea de <strong>chmax</strong> y <strong>chmin</strong> es generalizar funciones nativas del lenguaje como <strong>+=, &amp;= o |=</strong>. <strong>chmax(variable, valor)</strong> actualiza a la variable de esta forma: variable = <strong>max(variable, valor)</strong>. <strong>chmin</strong> hace lo mismo pero con el mínimo.</p>
 <pre><code class="language-cpp">template &lt;typename T&gt;
 inline void chmax(T &amp;lhs, T rhs)
 {
@@ -360,7 +360,7 @@ int main(){
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cómo-practicar"><a class="header" href="#cómo-practicar">Cómo practicar</a></h1>
-<p>Practicar no es trivial, ya que depende de la resiliencia, conocimiento y motivación del estudiante. A continuación, se enlazan algunos recursos útiles sobre este tema:</p>
+<p>Practicar no es trivial, ya que depende de la resiliencia, conocimiento y motivación del estudiante. A continuación, enlazamos algunos recursos útiles sobre este tema:</p>
 <ul>
 <li><a href="https://codeforces.com/blog/entry/91114">My opinion on how to practice competitive programming - Radewoosh</a></li>
 <li><a href="https://codeforces.com/blog/entry/98806">How to practice Competitive Programming - Um_nik</a></li>
@@ -375,7 +375,7 @@ int main(){
 <li><a href="https://cses.fi/problemset/task/1625">Grid Paths</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="matemáticas"><a class="header" href="#matemáticas">Matemáticas</a></h1>
-<p>A diferencia de los otros temas que serán mencionados en la guía, es esperable que no estén familiarizados con la mayoría de los algoritmos en esta sección, por eso se recomienda que sea leída por todos los integrantes del equipo.</p>
+<p>A diferencia de los otros temas que serán mencionados en la guía, los algoritmos de esta sección no entran dentro del temario de <em>Algoritmos y Estructuras de Datos</em>. Por eso, sugerimos que todos los miembros del equipo lean esta sección.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="divisibilidad"><a class="header" href="#divisibilidad">Divisibilidad</a></h1>
 <blockquote>
 <p>Importancia: <font color="green">Alta</font></p>
@@ -409,7 +409,7 @@ int main(){
 <li>Memoria: \( \Theta(1) \)</li>
 <li>Complejidad \( \Theta(\sqrt{n}) \)</li>
 </ul>
-<p>Este algoritmo tiene complejidad \(\Theta(\sqrt{n})\), ya que iteramos por los factores \(i \leq \sqrt{n}\). Podría resultar confuso que quede esta complejidad, siendo que tenemos un while adentro del for, pero como este se encarga de dividir a \(n\), esta acelerando el código.</p>
+<p>Este algoritmo tiene complejidad \(\Theta(\sqrt{n})\), ya que iteramos por los factores \(i \leq \sqrt{n}\). Podría resultar confuso que quede está complejidad, siendo que tenemos un while adentro del for, pero como este se encarga de dividir a \(n\), está acelerando el código.</p>
 <h3 id="algoritmo-criba-de-eratóstenes"><a class="header" href="#algoritmo-criba-de-eratóstenes"><strong>Algoritmo:</strong> Criba de Eratóstenes</a></h3>
 <p>Ahora sabemos cómo encontrar la descomposición en primos de un número. Pero ¿cómo hacemos para encontrar a todos los primos menores a un número arbitrario \(n\)? podríamos implementar una función <strong>es_primo(n)</strong> que funcione en \(\Theta(\sqrt{n})\) y simplemente iterar por los números entre 1 y \(n\), llamando a esta función por cada numero. La complejidad seria \(\Theta(n \sqrt{n})\). Resulta que podemos resolver este problema en tan solo \(\Theta (n\log(n))\).</p>
 <pre><code class="language-cpp">tint n;
@@ -428,7 +428,7 @@ forsn(i, 2, n+1)
 <blockquote>
 <p><strong>Serie armónica</strong> \(\sum_{i = 0}^{n}\frac{1}{i} = H_n \sim \Theta(\log(n))\)</p>
 </blockquote>
-<p>A lo sumo iteramos \(\frac{n}{i}\) veces por cada número (el número es menor ya que no iteramos por los compuestos). Entonces queda claro que la complejidad esta acotada por \(\mathcal{O}(n\log n)\).</p>
+<p>A lo sumo iteramos \(\frac{n}{i}\) veces por cada número (el número es menor ya que no iteramos por los compuestos). Entonces queda claro que la complejidad está acotada por \(\mathcal{O}(n\log n)\).</p>
 <h3 id="algoritmo-factorización-de-primos-plural"><a class="header" href="#algoritmo-factorización-de-primos-plural"><strong>Algoritmo:</strong> Factorización de Primos (plural)</a></h3>
 <p>El algoritmo de factorización singular mencionado anteriormente es óptimo para encontrar la factorización de un número en particular, pero ¿qué pasa si necesitamos saber la factorización de \(n\) números?. Resulta tentador responder que podemos usar el algoritmo \(n\) veces, y es verdad... pero no es óptimo. Si hiciéramos esto nos quedaría un código con complejidad \(\Theta(n\sqrt{M})\), donde M es el máximo valor que puede tomar alguno de nuestros números. Esta complejidad no es muy buena. ¿Cómo podemos usar la <strong>criba de Eratóstenes</strong> para mejorar la complejidad?</p>
 <details>

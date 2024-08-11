@@ -208,7 +208,7 @@
 <li>Memoria: \( \Theta(1) \)</li>
 <li>Complejidad \( \Theta(\sqrt{n}) \)</li>
 </ul>
-<p>Este algoritmo tiene complejidad \(\Theta(\sqrt{n})\), ya que iteramos por los factores \(i \leq \sqrt{n}\). Podría resultar confuso que quede esta complejidad, siendo que tenemos un while adentro del for, pero como este se encarga de dividir a \(n\), esta acelerando el código.</p>
+<p>Este algoritmo tiene complejidad \(\Theta(\sqrt{n})\), ya que iteramos por los factores \(i \leq \sqrt{n}\). Podría resultar confuso que quede está complejidad, siendo que tenemos un while adentro del for, pero como este se encarga de dividir a \(n\), está acelerando el código.</p>
 <h3 id="algoritmo-criba-de-eratóstenes"><a class="header" href="#algoritmo-criba-de-eratóstenes"><strong>Algoritmo:</strong> Criba de Eratóstenes</a></h3>
 <p>Ahora sabemos cómo encontrar la descomposición en primos de un número. Pero ¿cómo hacemos para encontrar a todos los primos menores a un número arbitrario \(n\)? podríamos implementar una función <strong>es_primo(n)</strong> que funcione en \(\Theta(\sqrt{n})\) y simplemente iterar por los números entre 1 y \(n\), llamando a esta función por cada numero. La complejidad seria \(\Theta(n \sqrt{n})\). Resulta que podemos resolver este problema en tan solo \(\Theta (n\log(n))\).</p>
 <pre><code class="language-cpp">tint n;
@@ -227,7 +227,7 @@ forsn(i, 2, n+1)
 <blockquote>
 <p><strong>Serie armónica</strong> \(\sum_{i = 0}^{n}\frac{1}{i} = H_n \sim \Theta(\log(n))\)</p>
 </blockquote>
-<p>A lo sumo iteramos \(\frac{n}{i}\) veces por cada número (el número es menor ya que no iteramos por los compuestos). Entonces queda claro que la complejidad esta acotada por \(\mathcal{O}(n\log n)\).</p>
+<p>A lo sumo iteramos \(\frac{n}{i}\) veces por cada número (el número es menor ya que no iteramos por los compuestos). Entonces queda claro que la complejidad está acotada por \(\mathcal{O}(n\log n)\).</p>
 <h3 id="algoritmo-factorización-de-primos-plural"><a class="header" href="#algoritmo-factorización-de-primos-plural"><strong>Algoritmo:</strong> Factorización de Primos (plural)</a></h3>
 <p>El algoritmo de factorización singular mencionado anteriormente es óptimo para encontrar la factorización de un número en particular, pero ¿qué pasa si necesitamos saber la factorización de \(n\) números?. Resulta tentador responder que podemos usar el algoritmo \(n\) veces, y es verdad... pero no es óptimo. Si hiciéramos esto nos quedaría un código con complejidad \(\Theta(n\sqrt{M})\), donde M es el máximo valor que puede tomar alguno de nuestros números. Esta complejidad no es muy buena. ¿Cómo podemos usar la <strong>criba de Eratóstenes</strong> para mejorar la complejidad?</p>
 <details>

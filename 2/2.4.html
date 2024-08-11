@@ -176,7 +176,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="template-de-c"><a class="header" href="#template-de-c">Template de C++</a></h1>
-<p>Un aspecto clave de la programación competitiva es el tiempo: si tenés una solución correcta para un problema, pero te llevaría horas implementarla, entonces estás perdiendo tiempo que podrías usar para pensar en otros problemas. Comparto mi template, comentada con explicaciones.</p>
+<p>Un aspecto clave de la programación competitiva es el tiempo: si tenés una solución correcta para un problema, pero te llevaría horas implementarla, entonces estás perdiendo tiempo que podrías usar para pensar en otros problemas. Compartimos un posible template, comentado con explicaciones.</p>
 <h2 id="macros"><a class="header" href="#macros">Macros</a></h2>
 <pre><code class="language-cpp">#define forn(i, n) for (tint i = 0; i &lt; tint(n); i++)
 #define forsn(i, s, n) for (tint i = s; i &lt; tint(n); i++)
@@ -203,9 +203,9 @@ using pii = pair&lt;tint, tint&gt;;
 </code></pre>
 <ul>
 <li><strong>using namespace std</strong> - se usa para no tener que andar escribiendo <strong>std:cout</strong>, <strong>std:cin</strong>, etc. Es una mala practica, pero como estamos en programación competitiva eso no nos importa.</li>
-<li><strong>tint</strong> - define el <em>type of int</em>, o tipo de número que vamos a utilizar en el problema. Esto es para evitar cometer errores de tipo y acostumbrarse a escribir tint, en vez de tener que pensar cada vez que escribimos una variable.</li>
-<li><strong>vi</strong> - vector de tints.</li>
-<li><strong>pii</strong> - par de tints.</li>
+<li><strong>tint</strong> - define el <em>type of int</em>, o tipo de número que vamos a utilizar en el problema. Esto es para evitar cometer errores de tipo y acostumbrarse a escribir <strong>tint</strong>, en vez de tener que pensar cada vez que escribimos una variable.</li>
+<li><strong>vi</strong> - vector de <strong>tints</strong>.</li>
+<li><strong>pii</strong> - par de <strong>tints</strong>.</li>
 </ul>
 <h2 id="optimización-de-inputoutput"><a class="header" href="#optimización-de-inputoutput">Optimización de Input/Output</a></h2>
 <pre><code class="language-cpp">inline void fastIO()
@@ -216,7 +216,7 @@ using pii = pair&lt;tint, tint&gt;;
 </code></pre>
 <p>Esta función suele ser llamada en la primera línea del <strong>main</strong> en C++, se encarga de optimizar <strong>std::cin</strong> y <strong>std::cout</strong>, que por default son lentos.</p>
 <h2 id="chmax-y-chmin"><a class="header" href="#chmax-y-chmin">chmax y chmin</a></h2>
-<p>La idea de estas funciones es generalizar funciones nativas del lenguaje como <strong>+=, &amp;= o |=</strong>. <strong>chmax(variable, valor)</strong> actualiza a la variable de esta forma: variable = <strong>max(variable, valor)</strong>. <strong>chmin</strong> hace lo mismo pero con el minimo.</p>
+<p>La idea de <strong>chmax</strong> y <strong>chmin</strong> es generalizar funciones nativas del lenguaje como <strong>+=, &amp;= o |=</strong>. <strong>chmax(variable, valor)</strong> actualiza a la variable de esta forma: variable = <strong>max(variable, valor)</strong>. <strong>chmin</strong> hace lo mismo pero con el mínimo.</p>
 <pre><code class="language-cpp">template &lt;typename T&gt;
 inline void chmax(T &amp;lhs, T rhs)
 {
